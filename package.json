@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "run-s clean lint serve-dev",
+    "serve-dev": "cross-env PORT=${NEXT_PORT:-3000} next dev",
+    "build": "run-s clean && cross-env next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --fix",
+    "clean": "rimraf .next out",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -19,5 +22,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "husky": "^8.0.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.57.1"
   }
 }

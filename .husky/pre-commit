@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run lint ||
+(
+    echo '❌❌ Ooops.. an Errors Found.. ❌❌ '
+    false;
+)
+
+# If everything passes... Now we can commit
+echo '✅✅✅ Passed... I am committing this now. ✅✅✅'
+
