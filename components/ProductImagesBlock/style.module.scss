@@ -1,0 +1,223 @@
+.pd-imgs-block {
+  position: relative;
+  margin-bottom: 60px;
+
+  .pd-main {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: 0;
+    white-space: nowrap;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-x: repeat(100%);
+    scroll-behavior: smooth;
+
+    .pd-main-imgs {
+      position: relative;
+      text-align: center;
+
+      .pd-main-img {
+        display: inline-block;
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        scroll-snap-destination: 50% 0;
+
+        img {
+          width: 100%;
+          max-width: 570px;
+          -webkit-user-select: none;
+          user-select: none;
+          -webkit-user-drag: none;
+          user-drag: none;
+        }
+      }
+    }
+  }
+
+  .pd-alt-thumbs {
+    scroll-behavior: smooth;
+    display: block;
+    position: absolute;
+    top: 67px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100px;
+    height: 90%;
+    height: calc(100% - 100px);
+    z-index: 100;
+    overflow: hidden;
+    text-align: center;
+
+
+    .alt-thumbs {
+      display: flex;
+      flex-flow: column;
+      align-content: center;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0 auto;
+      white-space: nowrap;
+
+      .pd-thumb {
+        display: inline-block;
+        position: relative;
+        border: 1px solid transparent;
+        cursor: pointer;
+        margin: 0 0 10px;
+
+        &.active {
+          border-color: #000;
+        }
+
+        img {
+          position: relative;
+          z-index: 100;
+          vertical-align: middle;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .pd-arrow-prev {
+    cursor: pointer;
+    top: 30px;
+    bottom: auto;
+    left: 15px;
+    z-index: 100;
+    right: auto;
+    width: 100px;
+    height: 35px;
+    padding: 20px 0;
+    position: absolute;
+    display: block;
+
+    &::before {
+      margin-top: -5px;
+      margin-left: -25px;
+      width: 14px;
+      height: 14px;
+      border-top: 2px solid #000;
+      border-right: 2px solid #000;
+      transform: rotate(-45deg);
+      -webkit-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+
+  .pd-arrow-next {
+    cursor: pointer;
+    top: auto;
+    bottom: -5px;
+    right: 0;
+    z-index: 100;
+    left: 15px;
+    width: 100px;
+    height: 35px;
+    padding: 20px 0;
+    display: block;
+    position: absolute;
+
+    &::before {
+      margin-top: -10px;
+      margin-left: -25px;
+      width: 14px;
+      height: 14px;
+      border-top: 2px solid #000;
+      border-right: 2px solid #000;
+      transform: rotate(135deg);
+      -webkit-user-select: none;
+      -o-user-select: none;
+      user-select: none;
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .pd-imgs-block {
+    margin-bottom: 20px;
+
+    .mobile-alt-dots {
+      display: block;
+      margin-top: 7.5px;
+      text-align: center;
+
+      .alt-dot {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 7px;
+        border: 1px solid #000;
+        border-radius: 100%;
+        cursor: pointer;
+
+        &.active {
+          background-color: #000;
+        }
+      }
+    }
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .pd-imgs-block {
+    .pd-alt-thumbs {
+      display: flex;
+      z-index: 100;
+      overflow: hidden;
+      text-align: center;
+      width: auto;
+      position: unset;
+      justify-content: unset;
+
+      .alt-thumbs {
+        margin: 0 auto;
+        white-space: nowrap;
+        display: block;
+
+        .pd-thumb {
+          width: 65px;
+          margin: 10px 5px 0px 5px;
+        }
+      }
+    }
+
+    .pd-arrow-prev {
+      left: 0;
+      top: unset;
+      display: block;
+      bottom: -10px;
+      width: 15px;
+      height: 86px;
+
+      &::before {
+        transform: rotate(-135deg);
+      }
+    }
+
+    .pd-arrow-next {
+      right: -35px;
+      bottom: -10px;
+      left: unset;
+      display: block;
+      width: 15px;
+      height: 86px;
+
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
