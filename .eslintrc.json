@@ -3,7 +3,7 @@
   "rules": {
     // suppress errors for missing 'import React' in files
     "react/react-in-jsx-scope": "off",
-    "indent": ["error", 2],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
     "react/jsx-pascal-case": ["error", { "allowNamespace": true }],
     "jsx-quotes": ["error", "prefer-double"],
     "linebreak-style": ["error", "unix"],
