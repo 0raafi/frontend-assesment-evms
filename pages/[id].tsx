@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import getConfig from 'next/config';
 
 import ProductDetail from '../components/ProductDetail';
+
+import useLocalData from '../hooks/useLocalData';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -11,6 +14,20 @@ declare interface ProductPageProps {
 
 function ProductPage(props: ProductPageProps) {
   const { product } = props || {};
+  const { dispatch } = useLocalData();
+
+  useEffect(() => {
+
+    dispatch({
+      name: 'header',
+      type: 'update',
+      value: {
+        title: 'Accessories',
+        titleLink: '/',
+        subtitle: product.name
+      }
+    });
+  }, [dispatch, product.name]);
 
   return (
     <>

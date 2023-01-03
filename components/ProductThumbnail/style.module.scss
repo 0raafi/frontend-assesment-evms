@@ -4,18 +4,17 @@
   position: relative;
   min-width: 195px;
   max-width: 100%;
-  padding: 15px;
+  padding: 10px;
   float: left;
   width: 25%;
 
   .thumb-img {
     display: block;
     position: relative;
-    padding-bottom: 125%;
+    padding-bottom: 110%;
 
     img {
       position: absolute;
-      padding: 15px 15px 0;
       vertical-align: middle;
       max-width: 100%;
       border: 0;

@@ -1,0 +1,39 @@
+.header-wrapper {
+  padding: 10px;
+
+  .breadcrumbs-wrap {
+    .breadcrumb-link {
+      padding: 0.3em;
+      color: #666;
+      font-size: 1rem;
+      text-transform: uppercase;
+
+      &.title {
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+
+    .breadcrumb-divider {
+      margin: 0 4px;
+    }
+
+    .breadcrumb-h1 {
+      text-transform: uppercase;
+      display: inline;
+      margin: 0;
+      color: #666;
+      font-size: 1.2rem;
+      line-height: 3em;
+      font-stretch: normal;
+      font-weight: 600;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .header-wrapper {
+    padding: 0;
+  }
+}

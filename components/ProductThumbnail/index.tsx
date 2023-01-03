@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import React, { useState } from 'react';
+import Link from 'next/link';
+
 import { currency } from '../../core/utils';
 
 import style from './style.module.scss';

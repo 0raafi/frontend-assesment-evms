@@ -1,11 +1,13 @@
 import { useMemo, useReducer } from 'react';
 
-import { currency } from '../../core/utils';
-import ProductContext from './context/productDetail';
 import ProductImages from './ProductImages';
-import productReducer from './productReducer';
-import style from './style.module.scss';
 import VariantSelection from './VariantSelection';
+
+import { currency } from '../../core/utils';
+import productReducer from './productReducer';
+import ProductContext from './context/productDetail';
+
+import style from './style.module.scss';
 
 export interface ProductDetailProps {
   record: IProduct;

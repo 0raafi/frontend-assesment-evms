@@ -1,6 +1,10 @@
-import getConfig from 'next/config';
+import { useEffect } from 'react';
 import Head from 'next/head';
+import getConfig from 'next/config';
+
 import ProductThumbnail from '../components/ProductThumbnail';
+
+import useLocalData from '../hooks/useLocalData';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -10,6 +14,18 @@ declare interface HomeProps {
 
 function Home(props: HomeProps) {
   const { products } = props || {};
+  const { dispatch } = useLocalData();
+
+  useEffect(() => {
+
+    dispatch({
+      name: 'header',
+      type: 'update',
+      value: {
+        title: 'Accessories'
+      }
+    });
+  }, [dispatch]);
 
   return (
     <>

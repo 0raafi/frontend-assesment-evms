@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import ProductImagesBlock from '../ProductImagesBlock';
 import ProductContext from './context/productDetail';
+import ProductImagesBlock from '../ProductImagesBlock';
 
 import style from './style.module.scss';
 
